@@ -29,7 +29,7 @@ public class Setting
 
 	/** PACKAGEJSON
 	*/
-	public const string PACKAGEJSON_DISCRIPTION = "PlayerLoop操作";
+	public const string PACKAGEJSON_DISCRIPTION = "LowLevel.PlayerLoopSystem操作";
 
 	/** PACKAGEJSON
 	*/

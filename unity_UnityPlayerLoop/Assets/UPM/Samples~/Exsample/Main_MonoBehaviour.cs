@@ -16,7 +16,6 @@ namespace Samples.UnityPlayerLoop.Exsample
 			if(t_playerloopsystem.subSystemList != null){
 				foreach(var t_item in t_playerloopsystem.subSystemList){
 					UnityEngine.Debug.Log("" + t_item.type.ToString());
-
 					foreach(var t_item_item in t_item.subSystemList){
 						UnityEngine.Debug.Log(" + " + t_item_item.type.ToString());
 					}

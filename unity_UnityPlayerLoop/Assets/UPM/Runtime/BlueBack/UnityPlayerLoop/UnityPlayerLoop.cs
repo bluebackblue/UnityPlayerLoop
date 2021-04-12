@@ -17,21 +17,21 @@ namespace BlueBack.UnityPlayerLoop
 	{
 		/** GetCurrentPlayerLoop
 		*/
-		UnityEngine.LowLevel.PlayerLoopSystem GetCurrentPlayerLoop()
+		public static UnityEngine.LowLevel.PlayerLoopSystem GetCurrentPlayerLoop()
 		{
 			return UnityEngine.LowLevel.PlayerLoop.GetCurrentPlayerLoop();
 		}
 
 		/** GetDefaultPlayerLoop
 		*/
-		UnityEngine.LowLevel.PlayerLoopSystem GetDefaultPlayerLoop()
+		public static UnityEngine.LowLevel.PlayerLoopSystem GetDefaultPlayerLoop()
 		{
 			return UnityEngine.LowLevel.PlayerLoop.GetDefaultPlayerLoop();
 		}
 
 		/** SetPlayerLoop
 		*/
-		void SetPlayerLoop(UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem)
+		public static void SetPlayerLoop(UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem)
 		{
 			UnityEngine.LowLevel.PlayerLoop.SetPlayerLoop(a_playerloopsystem);
 		}

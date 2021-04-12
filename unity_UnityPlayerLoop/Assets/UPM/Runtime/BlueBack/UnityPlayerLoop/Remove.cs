@@ -17,7 +17,7 @@ namespace BlueBack.UnityPlayerLoop
 	{
 		/** RemoveFromType
 		*/
-		public static void RemoveFromType(UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,System.Type a_type)
+		public static void RemoveFromType(ref UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,System.Type a_type)
 		{
 			int t_index_1;
 			int t_index_2;

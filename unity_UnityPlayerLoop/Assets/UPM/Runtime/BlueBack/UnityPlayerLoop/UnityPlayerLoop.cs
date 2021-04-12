@@ -31,7 +31,7 @@ namespace BlueBack.UnityPlayerLoop
 
 		/** SetPlayerLoop
 		*/
-		public static void SetPlayerLoop(UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem)
+		public static void SetPlayerLoop(in UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem)
 		{
 			UnityEngine.LowLevel.PlayerLoop.SetPlayerLoop(a_playerloopsystem);
 		}

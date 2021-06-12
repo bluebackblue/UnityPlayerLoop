@@ -17,7 +17,14 @@ namespace BlueBack.UnityPlayerLoop
 	{
 		/** version
 		*/
-		public const string packageversion = "0.0.2";
+		public const string packageversion = "0.0.3";
+
+		/** GetPackageVersion
+		*/
+		public static string GetPackageVersion()
+		{
+			return packageversion;
+		}
 	}
 }
 

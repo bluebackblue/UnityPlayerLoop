@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief バージョン。
+ * @brief バージョン。自動生成。
 */
 
 
@@ -15,9 +15,13 @@ namespace BlueBack.UnityPlayerLoop
 	*/
 	public class Version
 	{
-		/** version
+		/** packagename
 		*/
-		public const string packageversion = "0.0.4";
+		public const string packagename = "UnityPlayerLoop";
+
+		/** packageversion
+		*/
+		public const string packageversion = "0.0.5";
 
 		/** GetPackageVersion
 		*/

@@ -36,16 +36,16 @@ namespace Editor
 				//git_author
 				t_param.git_author = "bluebackblue";
 
-				//■package_name
+				//package_name
 				t_param.package_name = "UnityPlayerLoop";
 
-				//■getpackageversion
+				//getpackageversion
 				t_param.getpackageversion = BlueBack.UnityPlayerLoop.Version.GetPackageVersion;
 
 				//packagejson_unity
 				t_param.packagejson_unity = "2020.1";
 
-				//■packagejson_discription
+				//packagejson_discription
 				t_param.packagejson_discription = "LowLevel.PlayerLoopSystem操作";
 
 				//packagejson_keyword
@@ -56,16 +56,39 @@ namespace Editor
 				//packagejson_dependencies
 				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>();
 
-				//asmdef_reference
-				t_param.asmdef_reference = new string[]{
+				//asmdef_runtime
+				t_param.asmdef_runtime = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
 				};
 
-				//editorasmdef_reference
-				t_param.editorasmdef_reference = new string[]{
-					"BlueBack.UnityPlayerLoop",
+				//asmdef_editor
+				t_param.asmdef_editor = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.UnityPlayerLoop",
+							url = t_param.git_url + t_param.git_author + "/UnityPlayerLoop",
+						},
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
 				};
 
-				//■changelog
+				//asmdef_sample
+				t_param.asmdef_sample = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.UnityPlayerLoop",
+							url = t_param.git_url + t_param.git_author + "/UnityPlayerLoop",
+						},
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
+				};
+
+				//changelog
 				t_param.changelog = new string[]{
 					"# Changelog",
 					"",
@@ -106,12 +129,40 @@ namespace Editor
 
 					//依存。
 					(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {
-						return new string[]{
-							"## 外部依存 / 使用ライセンス等",
-							//"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + "AssetLib",
-							//"### サンプルのみ",
-							//"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + "AssetLib",
-						};
+
+						System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
+						t_list.Add("## 外部依存 / 使用ライセンス等");
+
+						{
+							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
+
+							//runtine
+							for(int ii=0;ii<a_argument.param.asmdef_runtime.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_runtime.reference_list[ii].url);
+							}
+
+							//editor
+							for(int ii=0;ii<a_argument.param.asmdef_editor.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_editor.reference_list[ii].url);
+							}
+
+							t_list.AddRange(t_url_list);
+						}
+
+						t_list.Add("### サンプルのみ");
+						
+						{
+							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
+
+							//sample
+							for(int ii=0;ii<a_argument.param.asmdef_sample.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_sample.reference_list[ii].url);
+							}
+
+							t_list.AddRange(t_url_list);
+						}
+
+						return t_list.ToArray();
 					},
 
 					//動作確認。

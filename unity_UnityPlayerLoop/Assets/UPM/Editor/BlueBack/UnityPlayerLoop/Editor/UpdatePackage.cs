@@ -15,7 +15,7 @@ namespace BlueBack.UnityPlayerLoop.Editor
 	/** UpdatePackage
 	*/
 	#if(!DEF_USER_BLUEBACK_UNITYPLAYERLOOP)
-	public class UpdatePackage
+	public static class UpdatePackage
 	{
 		/** MenuItem_BlueBack_UnityPlayerLoop_UpdatePackage
 		*/

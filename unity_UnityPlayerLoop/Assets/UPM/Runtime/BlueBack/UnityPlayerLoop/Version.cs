@@ -13,7 +13,7 @@ namespace BlueBack.UnityPlayerLoop
 {
 	/** Version
 	*/
-	public class Version
+	public static class Version
 	{
 		/** packagename
 		*/
@@ -21,7 +21,7 @@ namespace BlueBack.UnityPlayerLoop
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.9";
+		public const string packageversion = "0.0.10";
 
 		/** GetPackageVersion
 		*/

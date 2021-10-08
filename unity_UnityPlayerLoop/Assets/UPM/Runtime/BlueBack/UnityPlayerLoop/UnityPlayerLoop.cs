@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief UnityPlayerLoop。
+ * @brief ユニティープレイヤーループ。
 */
 
 
@@ -34,6 +34,30 @@ namespace BlueBack.UnityPlayerLoop
 		public static void SetPlayerLoop(in UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem)
 		{
 			UnityEngine.LowLevel.PlayerLoop.SetPlayerLoop(a_playerloopsystem);
+		}
+
+		/** 削除時にデフォルトに戻す。
+		*/
+		public static void SetDefaultPlayerLoopOnUnityDestroy()
+		{
+			UnityEngine.GameObject t_gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
+			UnityEngine.GameObject.DontDestroyOnLoad(t_gameobject);
+			t_gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
+
+			#if(DEF_BLUEBACK_UNITYPLAYERLOOP_HIDEINNERGAMEOBJECT)
+			t_gameobject.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
+			#endif
+		}
+
+		/** OnUnityDestory
+		*/
+		public static void OnUnityDestory()
+		{
+			#if(DEF_BLUEBACK_UNITYPLAYERLOOP_LOG)
+			DebugTool.Log("UnityPlayerLoop : default");
+			#endif
+
+			UnityPlayerLoop.SetPlayerLoop(UnityPlayerLoop.GetDefaultPlayerLoop());
 		}
 	}
 }

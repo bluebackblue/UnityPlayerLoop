@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief 追加。
+ * @brief ユニティープレイヤーループ。追加。
 */
 
 

@@ -12,6 +12,10 @@ namespace Samples.UnityPlayerLoop.Exsample
 		*/
 		private void Start()
 		{
+			//削除時にデフォルトに戻す。
+			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetDefaultPlayerLoopOnUnityDestroy();
+
+			//列挙。
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
 			if(t_playerloopsystem.subSystemList != null){
 				foreach(var t_item in t_playerloopsystem.subSystemList){
@@ -21,12 +25,6 @@ namespace Samples.UnityPlayerLoop.Exsample
 					}
 				}
 			}
-		}
-
-		/** Update
-		*/
-		private void Update()
-		{
 		}
 	}
 }

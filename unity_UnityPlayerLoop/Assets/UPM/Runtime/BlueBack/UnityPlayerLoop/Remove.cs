@@ -13,7 +13,7 @@ namespace BlueBack.UnityPlayerLoop
 {
 	/** Remove
 	*/
-	public class Remove
+	public static class Remove
 	{
 		/** RemoveFromType
 		*/

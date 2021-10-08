@@ -13,7 +13,7 @@ namespace BlueBack.UnityPlayerLoop
 {
 	/** Find
 	*/
-	public class Find
+	public static class Find
 	{
 		/** ３階層までを探査。
 		

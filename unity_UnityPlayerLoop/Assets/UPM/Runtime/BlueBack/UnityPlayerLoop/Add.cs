@@ -13,7 +13,7 @@ namespace BlueBack.UnityPlayerLoop
 {
 	/** Add
 	*/
-	public class Add
+	public static class Add
 	{
 		/** Find
 

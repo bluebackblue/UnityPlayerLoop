@@ -13,8 +13,12 @@ namespace BlueBack.UnityPlayerLoop
 {
 	/** UnityPlayerLoop
 	*/
-	public class UnityPlayerLoop
+	public static class UnityPlayerLoop
 	{
+		/** s_gameobject
+		*/
+		private static UnityEngine.GameObject s_gameobject = null;
+
 		/** GetCurrentPlayerLoop
 		*/
 		public static UnityEngine.LowLevel.PlayerLoopSystem GetCurrentPlayerLoop()
@@ -40,13 +44,14 @@ namespace BlueBack.UnityPlayerLoop
 		*/
 		public static void SetDefaultPlayerLoopOnUnityDestroy()
 		{
-			UnityEngine.GameObject t_gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
-			UnityEngine.GameObject.DontDestroyOnLoad(t_gameobject);
-			t_gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
-
-			#if(DEF_BLUEBACK_UNITYPLAYERLOOP_HIDEINNERGAMEOBJECT)
-			t_gameobject.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
-			#endif
+			if(s_gameobject == null){
+				s_gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
+				UnityEngine.GameObject.DontDestroyOnLoad(s_gameobject);
+				s_gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
+				#if(DEF_BLUEBACK_UNITYPLAYERLOOP_HIDEINNERGAMEOBJECT)
+				t_gameobject.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
+				#endif
+			}
 		}
 
 		/** OnUnityDestory

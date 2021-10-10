@@ -28,9 +28,9 @@ namespace BlueBack.UnityPlayerLoop.Editor
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM#" + t_version);
 			}
 		}
 

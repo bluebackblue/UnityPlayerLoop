@@ -4,23 +4,23 @@ PlayerLoop操作
 
 ## ライセンス
 MIT License
-* https://github.com/bluebackblue/UnityPlayerLoop/blob/main/LICENSE
+* https://github.com/bluebackblue/UpmUnityPlayerLoop/blob/main/LICENSE
 
 ## 依存 / 使用ライセンス等
 ### ランタイム
 ### エディター
-* https://github.com/bluebackblue/UnityPlayerLoop
+* https://github.com/bluebackblue/UpmUnityPlayerLoop
 ### サンプル
-* https://github.com/bluebackblue/UnityPlayerLoop
+* https://github.com/bluebackblue/UpmUnityPlayerLoop
 
 ## 動作確認
 Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM#0.0.10
+* https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM#0.0.11
 ### 開発
-* https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM
+* https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM
 
 ## Unityへの追加方法
 * Unity起動

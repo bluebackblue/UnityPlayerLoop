@@ -9,16 +9,14 @@ MIT License
 ## 依存 / 使用ライセンス等
 ### ランタイム
 ### エディター
-* https://github.com/bluebackblue/UpmUnityPlayerLoop
 ### サンプル
-* https://github.com/bluebackblue/UpmUnityPlayerLoop
 
 ## 動作確認
 Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM#0.0.11
+* https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM#0.0.12
 ### 開発
 * https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM
 

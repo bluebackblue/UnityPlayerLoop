@@ -43,14 +43,6 @@ namespace BlueBack.UnityPlayerLoop
 					t_sub_list.RemoveAt(t_index_3);
 					a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_sub_list.ToArray();
 				}break;
-			default:
-				{
-					//未発見。
-
-					#if(DEF_BLUEBACK_UNITYPLAYERLOOP_ASSERT)
-					DebugTool.Assert(false);
-					#endif
-				}break;
 			}
 		}
 	}

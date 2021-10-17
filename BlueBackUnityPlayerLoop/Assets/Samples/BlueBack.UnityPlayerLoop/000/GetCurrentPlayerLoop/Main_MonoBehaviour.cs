@@ -1,8 +1,8 @@
 
 
-/** Samples.UnityPlayerLoop.Exsample
+/** Samples.UnityPlayerLoop.GetCurrentPlayerLoop
 */
-namespace Samples.UnityPlayerLoop.Exsample
+namespace Samples.UnityPlayerLoop.GetCurrentPlayerLoop
 {
 	/** Main_MonoBehaviour
 	*/

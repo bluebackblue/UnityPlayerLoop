@@ -20,21 +20,25 @@ namespace BlueBack.UnityPlayerLoop.Editor
 		*/
 		public const string packageversion = Version.packageversion;
 
-		/** MenuItem_BlueBack_UnityPlayerLoop_UpdatePackage
+		/** MenuItem_UpdatePackage_Develop
 		*/
 		#if(!DEF_USER_BLUEBACK_UNITYPLAYERLOOP)
-		[UnityEditor.MenuItem("BlueBack/UnityPlayerLoop/UpdatePackage " + Version.packageversion)]
+		[UnityEditor.MenuItem("BlueBack/UnityPlayerLoop/UpdatePackage/Develop")]
 		#endif
-		public static void MenuItem_BlueBack_UnityPlayerLoop_UpdatePackage()
+		public static void MenuItem_UpdatePackage_Develop()
+		{
+			UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM");
+		}
+
+		/** MenuItem_UpdatePackage_Last
+		*/
+		#if(!DEF_USER_BLUEBACK_UNITYPLAYERLOOP)
+		[UnityEditor.MenuItem("BlueBack/UnityPlayerLoop/UpdatePackage/Last " + Version.packageversion)]
+		#endif
+		public static void MenuItem_UpdatePackage_Last()
 		{
 			string t_version = GetLastReleaseNameFromGitHub();
-			if(t_version == null){
-				#if(UNITY_EDITOR)
-				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
-				#endif
-			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM");
-			}else{
+			if(t_version != null){
 				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM#" + t_version);
 			}
 		}

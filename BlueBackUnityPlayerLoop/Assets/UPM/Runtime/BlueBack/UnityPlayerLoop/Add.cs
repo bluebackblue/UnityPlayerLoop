@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief ユニティープレイヤーループ。追加。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief ユニティープレイヤーループ。追加。
 */
 
 

@@ -33,7 +33,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.UnityPlayerLoop",
                 "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
             }
@@ -44,7 +44,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.UnityPlayerLoop",
                 "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
             }

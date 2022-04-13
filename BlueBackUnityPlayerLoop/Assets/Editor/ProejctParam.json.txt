@@ -1,53 +1,55 @@
 {
-    "namespace_author":"BlueBack",
-    "namespace_package":"UnityPlayerLoop",
-    "git_url":"https://github.com/bluebackblue/UpmUnityPlayerLoop",
-    "git_api":"https://api.github.com/repos/bluebackblue/UpmUnityPlayerLoop",
-    "git_path":"BlueBackUnityPlayerLoop/Assets/UPM",
-    "discription_simple":"PlayerLoop操作",
-    "discription_detal":[
-        "PlayerLoop操作",
-        "* イベントの追加、削除"
-    ],
-    "keyword":[
-        "unity","playerloop"
-    ],
-    "changelog":[
-        "# Changelog",
-        "",
-        "## [0.0.0] - 2021-06-10",
-        "### Changes",
-        "- Init",
-        ""
-    ],
-    "root_readmemd_path":"../../README.md",
-    "need_unity_version":"2020.1",
-    "asmdef_runtime":{
-        "define_list":[
-        ],
-        "reference_list":[
-        ]
-    },
-    "asmdef_editor":{
-        "define_list":[
-        ],
-        "reference_list":[
-            {
-                "mode":"package",
-                "package_fullname":"BlueBack.UnityPlayerLoop",
-                "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
-            }
-        ]
-    },
-    "asmdef_sample":{
-        "define_list":[
-        ],
-        "reference_list":[
-            {
-                "mode":"package",
-                "package_fullname":"BlueBack.UnityPlayerLoop",
-                "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
-            }
-        ]
-    }
+	"namespace_author":"BlueBack",
+	"namespace_package":"UnityPlayerLoop",
+	"git_url":"https://github.com/bluebackblue/UpmUnityPlayerLoop",
+	"git_api":"https://api.github.com/repos/bluebackblue/UpmUnityPlayerLoop",
+	"git_path":"BlueBackUnityPlayerLoop/Assets/UPM",
+	"discription_simple":"PlayerLoop操作",
+	"discription_detal":[
+		"PlayerLoop操作",
+		"* イベントの追加、削除"
+	],
+	"keyword":[
+		"unity","playerloop"
+	],
+	"changelog":[
+		"# Changelog",
+		"",
+		"## [0.0.0] - 2021-06-10",
+		"### Changes",
+		"- Init",
+		""
+	],
+	"root_readmemd_path":"../../README.md",
+	"need_unity_version":"2020.1",
+	"asmdef_runtime":{
+		"define_list":[
+		],
+		"reference_list":[
+		]
+	},
+	"asmdef_editor":{
+		"define_list":[
+		],
+		"reference_list":[
+			{
+				"mode":"package",
+				"package_fullname":"BlueBack.UnityPlayerLoop",
+				"url":"https://github.com/bluebackblue/UpmUnityPlayerLoop",
+				"define_package_pathname":"blueback.unityplayerloop"
+			}
+		]
+	},
+	"asmdef_sample":{
+		"define_list":[
+		],
+		"reference_list":[
+			{
+				"mode":"package",
+				"package_fullname":"BlueBack.UnityPlayerLoop",
+				"url":"https://github.com/bluebackblue/UpmUnityPlayerLoop",
+				"define_package_pathname":"blueback.unityplayerloop"
+			}
+		]
+	}
 }

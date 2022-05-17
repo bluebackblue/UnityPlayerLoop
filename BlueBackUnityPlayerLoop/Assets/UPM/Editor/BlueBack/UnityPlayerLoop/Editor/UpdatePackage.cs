@@ -22,7 +22,7 @@ namespace BlueBack.UnityPlayerLoop.Editor
 
 		/** MenuItem_UpdatePackage_Develop
 		*/
-		#if(!DEF_USER_BLUEBACK_UNITYPLAYERLOOP)
+		#if(!USERDEF_BLUEBACK_UNITYPLAYERLOOP)
 		[UnityEditor.MenuItem("BlueBack/UnityPlayerLoop/UpdatePackage/Develop")]
 		#endif
 		public static void MenuItem_UpdatePackage_Develop()
@@ -40,7 +40,7 @@ namespace BlueBack.UnityPlayerLoop.Editor
 
 		/** MenuItem_UpdatePackage_Last
 		*/
-		#if(!DEF_USER_BLUEBACK_UNITYPLAYERLOOP)
+		#if(!USERDEF_BLUEBACK_UNITYPLAYERLOOP)
 		[UnityEditor.MenuItem("BlueBack/UnityPlayerLoop/UpdatePackage/Last " + Version.packageversion)]
 		#endif
 		public static void MenuItem_UpdatePackage_Last()

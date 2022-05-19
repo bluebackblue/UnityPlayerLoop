@@ -15,9 +15,9 @@ namespace BlueBack.UnityPlayerLoop
 	*/
 	public static class UnityPlayerLoop
 	{
-		/** s_gameobject
+		/** gameobject
 		*/
-		private static UnityEngine.GameObject s_gameobject = null;
+		private static UnityEngine.GameObject gameobject = null;
 
 		/** GetCurrentPlayerLoop
 		*/
@@ -44,10 +44,10 @@ namespace BlueBack.UnityPlayerLoop
 		*/
 		public static void SetDefaultPlayerLoopOnUnityDestroy()
 		{
-			if(s_gameobject == null){
-				s_gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
-				UnityEngine.GameObject.DontDestroyOnLoad(s_gameobject);
-				s_gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
+			if(UnityPlayerLoop.gameobject == null){
+				UnityPlayerLoop.gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
+				UnityEngine.GameObject.DontDestroyOnLoad(UnityPlayerLoop.gameobject);
+				UnityPlayerLoop.gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
 				#if(DEF_BLUEBACK_UNITYPLAYERLOOP_HIDEINNERGAMEOBJECT)
 				t_gameobject.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
 				#endif

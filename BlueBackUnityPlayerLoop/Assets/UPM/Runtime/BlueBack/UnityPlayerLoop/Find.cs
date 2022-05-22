@@ -16,7 +16,7 @@ namespace BlueBack.UnityPlayerLoop
 	public static class Find
 	{
 		/** ３階層までを探査。
-		
+
 			a_playerloopsystem		: プレイヤーループシステム。
 			a_type					: 検索するタイプ。
 

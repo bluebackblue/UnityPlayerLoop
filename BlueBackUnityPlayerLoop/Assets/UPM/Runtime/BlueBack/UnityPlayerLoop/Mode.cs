@@ -26,7 +26,7 @@ namespace BlueBack.UnityPlayerLoop
 		/** 直前に追加。
 		*/
 		AddBefore,
-			
+
 		/** 直後に追加。
 		*/
 		AddAfter,

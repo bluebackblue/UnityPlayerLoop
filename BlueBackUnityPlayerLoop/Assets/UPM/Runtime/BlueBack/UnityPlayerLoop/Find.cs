@@ -62,7 +62,7 @@ namespace BlueBack.UnityPlayerLoop
 
 			//未発見。
 
-			#if(DEF_BLUEBACK_UNITYPLAYERLOOP_ASSERT)
+			#if(DEF_BLUEBACK_ASSERT)
 			DebugTool.Assert(false);
 			#endif
 

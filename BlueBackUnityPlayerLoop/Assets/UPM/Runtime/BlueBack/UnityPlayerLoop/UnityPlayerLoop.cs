@@ -58,7 +58,7 @@ namespace BlueBack.UnityPlayerLoop
 		*/
 		public static void OnUnityDestory()
 		{
-			#if(DEF_BLUEBACK_UNITYPLAYERLOOP_LOG)
+			#if(DEF_BLUEBACK_LOG)
 			DebugTool.Log("UnityPlayerLoop : default");
 			#endif
 

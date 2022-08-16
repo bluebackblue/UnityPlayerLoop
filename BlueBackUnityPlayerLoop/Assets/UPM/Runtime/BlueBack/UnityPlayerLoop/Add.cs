@@ -64,7 +64,7 @@ namespace BlueBack.UnityPlayerLoop
 							{
 								//未発見。
 
-								#if(DEF_BLUEBACK_ASSERT)
+								#if(DEF_BLUEBACK_DEBUG_ASSERT)
 								DebugTool.Assert(false);
 								#endif
 
@@ -95,7 +95,7 @@ namespace BlueBack.UnityPlayerLoop
 							{
 								//未発見。
 
-								#if(DEF_BLUEBACK_ASSERT)
+								#if(DEF_BLUEBACK_DEBUG_ASSERT)
 								DebugTool.Assert(false);
 								#endif
 
@@ -108,7 +108,7 @@ namespace BlueBack.UnityPlayerLoop
 					{
 						//不明なタイプ。
 
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 
@@ -141,7 +141,7 @@ namespace BlueBack.UnityPlayerLoop
 					{
 						//不明なタイプ。
 
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 					}break;
@@ -171,7 +171,7 @@ namespace BlueBack.UnityPlayerLoop
 							{
 								//未発見。
 
-								#if(DEF_BLUEBACK_ASSERT)
+								#if(DEF_BLUEBACK_DEBUG_ASSERT)
 								DebugTool.Assert(false);
 								#endif
 							}break;
@@ -197,7 +197,7 @@ namespace BlueBack.UnityPlayerLoop
 							{
 								//未発見。
 
-								#if(DEF_BLUEBACK_ASSERT)
+								#if(DEF_BLUEBACK_DEBUG_ASSERT)
 								DebugTool.Assert(false);
 								#endif
 							}break;
@@ -207,7 +207,7 @@ namespace BlueBack.UnityPlayerLoop
 					{
 						//不明なタイプ。
 
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 					}break;

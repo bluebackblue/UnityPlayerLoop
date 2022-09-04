@@ -112,7 +112,7 @@ namespace BlueBack.UnityPlayerLoop
 				}
 			}
 
-			if((t_target_list != null)&&(t_target_index > 0)&&(t_index_count > 0)){
+			if((t_target_list != null)&&(t_target_index >= 0)&&(t_index_count >= 0)){
 
 				//追加。
 				{

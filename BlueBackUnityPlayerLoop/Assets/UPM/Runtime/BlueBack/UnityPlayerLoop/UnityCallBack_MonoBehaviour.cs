@@ -11,15 +11,15 @@
 */
 namespace BlueBack.UnityPlayerLoop
 {
-	/** CallBack_OnUnityDestroy_MonoBehaviour
+	/** UnityCallBack_MonoBehaviour
 	*/
-	public sealed class CallBack_OnUnityDestroy_MonoBehaviour : UnityEngine.MonoBehaviour
+	public sealed class UnityCallBack_MonoBehaviour : UnityEngine.MonoBehaviour
 	{
 		/** OnDestroy
 		*/
 		private void OnDestroy()
 		{
-			UnityPlayerLoop.OnUnityDestory();
+			UnityPlayerLoop.UnityDestory();
 		}
 	}
 }

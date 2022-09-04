@@ -42,24 +42,32 @@ namespace BlueBack.UnityPlayerLoop
 
 		/** 削除時にデフォルトに戻す。
 		*/
-		public static void SetDefaultPlayerLoopOnUnityDestroy()
+		public static void SetDefaultPlayerLoopOnUnityDestroy(string a_objectname)
 		{
 			if(UnityPlayerLoop.gameobject == null){
-				UnityPlayerLoop.gameobject = new UnityEngine.GameObject("UnityPlayerLoop");
+				string t_objectname = a_objectname;
+
+				if(a_objectname != null){
+					t_objectname = a_objectname;
+				}else{
+					t_objectname = "unityplayerloop";
+				}
+
+				UnityPlayerLoop.gameobject = new UnityEngine.GameObject(t_objectname);
 				UnityEngine.GameObject.DontDestroyOnLoad(UnityPlayerLoop.gameobject);
-				UnityPlayerLoop.gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
+				UnityPlayerLoop.gameobject.AddComponent<UnityCallBack_MonoBehaviour>();
 				#if(DEF_BLUEBACK_UNITYPLAYERLOOP_HIDEINNERGAMEOBJECT)
 				t_gameobject.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
 				#endif
 			}
 		}
 
-		/** OnUnityDestory
+		/** UnityCallBack_MonoBehaviourから呼び出される。
 		*/
-		public static void OnUnityDestory()
+		public static void UnityDestory()
 		{
 			#if(DEF_BLUEBACK_DEBUG_LOG)
-			DebugTool.Log("UnityPlayerLoop : default");
+			DebugTool.Log("SetPlayerLoop : default");
 			#endif
 
 			UnityPlayerLoop.SetPlayerLoop(UnityPlayerLoop.GetDefaultPlayerLoop());

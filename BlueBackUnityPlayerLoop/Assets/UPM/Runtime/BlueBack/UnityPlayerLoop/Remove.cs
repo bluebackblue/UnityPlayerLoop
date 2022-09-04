@@ -16,9 +16,13 @@ namespace BlueBack.UnityPlayerLoop
 	public static class Remove
 	{
 		/** RemoveFromType
+
+			return == false : 失敗。
+
 		*/
-		public static void RemoveFromType(ref UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,System.Type a_type)
+		public static bool RemoveFromType(ref UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,System.Type a_type)
 		{
+			//index
 			int t_index_1;
 			int t_index_2;
 			int t_index_3;
@@ -27,22 +31,32 @@ namespace BlueBack.UnityPlayerLoop
 			switch(t_index_count){
 			case 1:
 				{
+					//１階層目に発見。
+
 					System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem> t_sub_list = new System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem>(a_playerloopsystem.subSystemList);
 					t_sub_list.RemoveAt(t_index_1);
 					a_playerloopsystem.subSystemList = t_sub_list.ToArray();
-				}break;
+				}return true;
 			case 2:
 				{
+					//２階層目に発見。
+
 					System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem> t_sub_list = new System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem>(a_playerloopsystem.subSystemList[t_index_1].subSystemList);
 					t_sub_list.RemoveAt(t_index_2);
 					a_playerloopsystem.subSystemList[t_index_1].subSystemList = t_sub_list.ToArray();
-				}break;
+				}return true;
 			case 3:
 				{
+					//３階層目に発見。
+
 					System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem> t_sub_list = new System.Collections.Generic.List<UnityEngine.LowLevel.PlayerLoopSystem>(a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList);
 					t_sub_list.RemoveAt(t_index_3);
 					a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_sub_list.ToArray();
-				}break;
+				}return true;
+			default:
+				{
+					//未発見。
+				}return false;
 			}
 		}
 	}

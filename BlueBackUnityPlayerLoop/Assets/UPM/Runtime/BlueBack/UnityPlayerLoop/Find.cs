@@ -24,7 +24,11 @@ namespace BlueBack.UnityPlayerLoop
 			a_index_2				: 検索結果。
 			a_index_3				: 検索結果。
 
-			return					: 検索結果の有効数。
+			return					: 階層。
+			return == -1			: 未発見。
+			return == 1				: １階層目に発見。list[a_index_1] == a_type。
+			return == 2				: ２階層目に発見。list[a_index_1][a_index_2] == a_type。
+			return == 2				: ３階層目に発見。list[a_index_1][a_index_2][a_index_3] == a_type。
 
 		*/
 		public static int FindFromType(in UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,System.Type a_type,out int a_index_1,out int a_index_2,out int a_index_3)
@@ -61,11 +65,6 @@ namespace BlueBack.UnityPlayerLoop
 			}
 
 			//未発見。
-
-			#if(DEF_BLUEBACK_DEBUG_ASSERT)
-			DebugTool.Assert(false);
-			#endif
-
 			a_index_1 = -1;
 			a_index_2 = -1;
 			a_index_3 = -1;

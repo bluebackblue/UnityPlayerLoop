@@ -23,8 +23,10 @@ namespace BlueBack.UnityPlayerLoop
 			a_type					: タイプ。
 			a_function				: 関数。
 
+			return == false			: 失敗。
+
 		*/
-		public static void AddFromType(ref UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,Mode a_mode,System.Type a_target_type,System.Type a_type,UnityEngine.LowLevel.PlayerLoopSystem.UpdateFunction a_function)
+		public static bool AddFromType(ref UnityEngine.LowLevel.PlayerLoopSystem a_playerloopsystem,Mode a_mode,System.Type a_target_type,System.Type a_type,UnityEngine.LowLevel.PlayerLoopSystem.UpdateFunction a_function)
 		{
 			int t_index_1;
 			int t_index_2;
@@ -33,9 +35,11 @@ namespace BlueBack.UnityPlayerLoop
 
 			UnityEngine.LowLevel.PlayerLoopSystem t_item = new UnityEngine.LowLevel.PlayerLoopSystem();
 			{
-				t_item.subSystemList = null;
 				t_item.type = a_type;
+				t_item.subSystemList = null;
 				t_item.updateDelegate = a_function;
+				//t_item.updateFunction;
+				//t_item.loopConditionFunction;
 			}
 
 			int t_target_index;
@@ -63,11 +67,6 @@ namespace BlueBack.UnityPlayerLoop
 						default:
 							{
 								//未発見。
-
-								#if(DEF_BLUEBACK_DEBUG_ASSERT)
-								DebugTool.Assert(false);
-								#endif
-
 								t_target_list = null;
 							}break;
 						}
@@ -94,11 +93,6 @@ namespace BlueBack.UnityPlayerLoop
 						default:
 							{
 								//未発見。
-
-								#if(DEF_BLUEBACK_DEBUG_ASSERT)
-								DebugTool.Assert(false);
-								#endif
-
 								t_target_list = null;
 								t_target_index = -1;
 							}break;
@@ -118,100 +112,108 @@ namespace BlueBack.UnityPlayerLoop
 				}
 			}
 
-			//追加。
-			{
-				switch(a_mode){
-				case Mode.AddFirst:
-					{
-						t_target_list.Insert(0,t_item);
-					}break;
-				case Mode.AddLast:
-					{
-						t_target_list.Add(t_item);
-					}break;
-				case Mode.AddBefore:
-					{
-						t_target_list.Insert(t_target_index,t_item);
-					}break;
-				case Mode.AddAfter:
-					{
-						t_target_list.Insert(t_target_index + 1,t_item);
-					}break;
-				default:
-					{
-						//不明なタイプ。
+			if((t_target_list != null)&&(t_target_index > 0)&&(t_index_count > 0)){
 
-						#if(DEF_BLUEBACK_DEBUG_ASSERT)
-						DebugTool.Assert(false);
-						#endif
-					}break;
-				}	
-			}
+				//追加。
+				{
+					switch(a_mode){
+					case Mode.AddFirst:
+						{
+							t_target_list.Insert(0,t_item);
+						}break;
+					case Mode.AddLast:
+						{
+							t_target_list.Add(t_item);
+						}break;
+					case Mode.AddBefore:
+						{
+							t_target_list.Insert(t_target_index,t_item);
+						}break;
+					case Mode.AddAfter:
+						{
+							t_target_list.Insert(t_target_index + 1,t_item);
+						}break;
+					default:
+						{
+							//不明なタイプ。
 
-			//適応。
-			{
-				switch(a_mode){
-				case Mode.AddFirst:
-				case Mode.AddLast:
-					{
-						switch(t_index_count){
-						case 1:
-							{
-								a_playerloopsystem.subSystemList[t_index_1].subSystemList = t_target_list.ToArray();
-							}break;
-						case 2:
-							{
-								a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_target_list.ToArray();
-							}break;
-						case 3:
-							{
-								a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList[t_index_3].subSystemList = t_target_list.ToArray();
-							}break;
-						default:
-							{
-								//未発見。
-
-								#if(DEF_BLUEBACK_DEBUG_ASSERT)
-								DebugTool.Assert(false);
-								#endif
-							}break;
-						}
-					}break;
-				case Mode.AddBefore:
-				case Mode.AddAfter:
-					{
-						switch(t_index_count){
-						case 1:
-							{
-								a_playerloopsystem.subSystemList = t_target_list.ToArray();
-							}break;
-						case 2:
-							{
-								a_playerloopsystem.subSystemList[t_index_1].subSystemList = t_target_list.ToArray();
-							}break;
-						case 3:
-							{
-								a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_target_list.ToArray();
-							}break;
-						default:
-							{
-								//未発見。
-
-								#if(DEF_BLUEBACK_DEBUG_ASSERT)
-								DebugTool.Assert(false);
-								#endif
-							}break;
-						}
-					}break;
-				default:
-					{
-						//不明なタイプ。
-
-						#if(DEF_BLUEBACK_DEBUG_ASSERT)
-						DebugTool.Assert(false);
-						#endif
-					}break;
+							#if(DEF_BLUEBACK_DEBUG_ASSERT)
+							DebugTool.Assert(false);
+							#endif
+						}break;
+					}	
 				}
+
+				//適応。
+				{
+					switch(a_mode){
+					case Mode.AddFirst:
+					case Mode.AddLast:
+						{
+							switch(t_index_count){
+							case 1:
+								{
+									a_playerloopsystem.subSystemList[t_index_1].subSystemList = t_target_list.ToArray();
+								}break;
+							case 2:
+								{
+									a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_target_list.ToArray();
+								}break;
+							case 3:
+								{
+									a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList[t_index_3].subSystemList = t_target_list.ToArray();
+								}break;
+							default:
+								{
+									//未発見。
+
+									#if(DEF_BLUEBACK_DEBUG_ASSERT)
+									DebugTool.Assert(false);
+									#endif
+								}break;
+							}
+						}break;
+					case Mode.AddBefore:
+					case Mode.AddAfter:
+						{
+							switch(t_index_count){
+							case 1:
+								{
+									a_playerloopsystem.subSystemList = t_target_list.ToArray();
+								}break;
+							case 2:
+								{
+									a_playerloopsystem.subSystemList[t_index_1].subSystemList = t_target_list.ToArray();
+								}break;
+							case 3:
+								{
+									a_playerloopsystem.subSystemList[t_index_1].subSystemList[t_index_2].subSystemList = t_target_list.ToArray();
+								}break;
+							default:
+								{
+									//未発見。
+
+									#if(DEF_BLUEBACK_DEBUG_ASSERT)
+									DebugTool.Assert(false);
+									#endif
+								}break;
+							}
+						}break;
+					default:
+						{
+							//不明なタイプ。
+
+							#if(DEF_BLUEBACK_DEBUG_ASSERT)
+							DebugTool.Assert(false);
+							#endif
+						}break;
+					}
+				}
+
+				return true;
+			}else{
+				//失敗。
+				return false;
 			}
 		}
 	}

@@ -13,7 +13,7 @@ namespace BlueBack.UnityPlayerLoop.Samples.GetCurrentPlayerLoop
 		private void Start()
 		{
 			//削除時にデフォルトに戻す。
-			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetDefaultPlayerLoopOnUnityDestroy();
+			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetDefaultPlayerLoopOnUnityDestroy(null);
 
 			//列挙。
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
